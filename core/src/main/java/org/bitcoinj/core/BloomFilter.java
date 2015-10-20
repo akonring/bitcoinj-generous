@@ -124,6 +124,14 @@ public class BloomFilter extends Message {
         return pow(1 - pow(E, -1.0 * (hashFuncs * elements) / (data.length * 8)), hashFuncs);
     }
 
+    public int getFilterSize() { return data.length; }
+
+    public long getHashFuncs() { return hashFuncs; }
+
+    public long getnTweak() { return nTweak; }
+
+    public byte[] getFilter() { return data; }
+
     @Override
     public String toString() {
         return "Bloom Filter of size " + data.length + " with " + hashFuncs + " hash functions.";
